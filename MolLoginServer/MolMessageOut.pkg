@@ -1,0 +1,31 @@
+$#include "MolNet/MolMessageOut.h"
+
+/**
+* 用于建立输出信息
+*/
+class CMolMessageOut
+{
+public:
+	/// 构造函数
+	CMolMessageOut();
+	/// 带消息ID的构造函数
+	CMolMessageOut(int id);
+	/// 析构函数
+	~CMolMessageOut();
+
+	/// 清除当前信息
+	void clear();
+	/// 写一个BYTE进去
+	void writeByte(int value);
+	/// 写一个SHORT进去
+	void writeShort(int value);
+	/// 写一个LONG进去
+	void writeLong(int value);
+	/// 写一个字符串进去
+	void writeString(const std::string &str, int length = -1);
+	/// 得到消息
+	char* getData() const;
+	/// 得到消息长度
+	unsigned int getLength() const;
+};
+

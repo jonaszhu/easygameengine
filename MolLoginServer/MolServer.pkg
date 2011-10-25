@@ -1,0 +1,33 @@
+$pfile "Position2d.pkg"
+$pfile "Dimension2d.pkg"
+$pfile "Rect.pkg"
+$pfile "MolString.pkg"
+$pfile "MolMessageIn.pkg"
+$pfile "MolMessageOut.pkg"
+$pfile "Player.pkg"
+$pfile "Room.pkg"
+
+$[ 
+toHelper={} 
+
+function toHelper.toPlayer(e)     
+	return tolua.cast(e, "Player") 
+end 
+
+function toHelper.toRoom(e)     
+	return tolua.cast(e, "Room") 
+end 
+
+function toHelper.toMessageIn(e)     
+	return tolua.cast(e, "CMolMessageIn") 
+end 
+
+function toHelper.toMessageOut(e)     
+	return tolua.cast(e, "CMolMessageOut") 
+end 
+
+function toHelper.toMolString(e)     
+	return tolua.cast(e, "CMolString") 
+end 
+
+$] 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ServerConfig>
+    <GameServerConfig>
+        <Configure Name="ServerName" Value="END" />
+        <Configure Name="ServerIp" Value="127.0.0.1" />
+        <Configure Name="ServerPort" Value="5678" />
+    </GameServerConfig>
+    <GameDataBaseConfig>
+        <Configure Name="ServerIp" Value="127.0.0.1" />
+        <Configure Name="ServerPort" Value="3306" />
+        <Configure Name="DataBaseName" Value="moleweb" />
+        <Configure Name="UserName" Value="root" />
+        <Configure Name="UserPassword" Value="akinggw" />
+    </GameDataBaseConfig>
+</ServerConfig>
