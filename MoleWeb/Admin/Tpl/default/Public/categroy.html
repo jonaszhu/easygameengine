@@ -1,0 +1,66 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+	<switch name="dsp">
+		<case value="add">
+		<h4>添加分类</h4>
+		<form name="catsform" method="post" action="__URL__/adds">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>分类名</th>
+				<td><input type="text" name="name" value="" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+		</case>
+		<case value="edit">
+		<h4>编辑分类</h4>
+		<form name="catsform" method="post" action="__URL__/edits">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>ID</th>
+				<td>{$cid}<input type="hidden" name="cid" value="{$cid}"></td>
+			</tr>
+			<tr>
+				<th>分类名</th>
+				<td><input type="text" name="name" value="{$name}" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+		</case>
+		<default />
+		<h4>分类管理</h4>
+		<include file="Public:searchbar" />
+		<form name="catsform" method="post" action="__URL__/batch">
+		<table width="100%" border="0" cellspacing="1" class="tb-a blank5">
+			<tr>
+				<th width="20"><input name="checkbox" type="checkbox" class="input-cb" onClick="selAll(this)" /></th>
+				<th width="30">ID</th>
+				<th>分类名</th>
+				<th width="150">操作</th>
+			</tr>
+			<volist name="cats" id="c">
+			<tr>
+				<td><input name="id[]" type="checkbox" id="id[]" value="{$c.cid}" class="input-cb" /></td>
+				<td>{$c.cid}</td>
+				<td>{$c.name}</td>
+				<td><a href="__URL__/edit/cid/{$c.cid}">编辑</a> <a href="__URL__/batch/act/delete/id/{$c.cid}">删除</a></td>
+			</tr>
+			</volist>
+			<tr>
+				<td colspan="4" align="left">
+					<input name="act" type="radio" value="delete" />删除
+					<input type="submit" value="提交" class="input-btn-c" />
+				</td>
+			</tr>
+		</table>
+		</form>
+		<include file="Public:paging" />
+	</switch>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

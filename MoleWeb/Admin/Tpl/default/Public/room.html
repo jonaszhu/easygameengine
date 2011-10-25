@@ -1,0 +1,92 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+	<switch name="dsp">
+		<case value="add">
+		<h4>添加游戏房间</h4>
+		<form name="roomform" method="post" action="__URL__/adds">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>房间ID</th>
+				<td><input type="text" name="Id" value="" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>游戏类型</th>
+				<td>
+				<select name="gameId" class="input-b">
+					<volist name="rtype" id="rt">
+					 <option value="{$rt.Id}">{$rt.name}</option>
+					</volist> 
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<th>房间名称</th>
+				<td><input type="text" name="name" value="" class="input-b" /></td>
+			</tr>		
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+		</case>
+		<case value="edit">
+		<h4>编辑游戏房间</h4>
+		<form name="roomform" method="post" action="__URL__/edits">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>房间ID</th>
+				<td><input type="text" name="Id" value="{$Id}"></td>
+			</tr>
+			<tr>
+				<th>游戏类型</th>
+				<td>
+				<select name="gameId" class="input-b">
+					<volist name="rtype" id="rt">
+					 <option value="{$rt.Id}" <if condition="$rt.Id eq $gameId">selected</if> >{$rt.name}</option>
+					</volist> 
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<th>房间名称</th>
+				<td><input type="text" name="name" value="{$name}" class="input-b" /></td>
+			</tr>			
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+		</case>
+		<default />
+		<h4>游戏房间管理</h4>
+		<include file="Public:searchbar" />
+		<form name="roomform" method="post" action="__URL__/batch">
+		<table width="100%" border="0" cellspacing="1" class="tb-a blank5">
+			<tr>
+				<th width="20"><input name="checkbox" type="checkbox" class="input-cb" onClick="selAll(this)" /></th>
+				<th>房间ID</th>
+				<th>游戏类型</th>
+				<th>房间名称</th>
+				<th width="150">操作</th>
+			</tr>
+			<volist name="user" id="u">
+			<tr>
+				<td><input name="id[]" type="checkbox" id="id[]" value="{$u.Id}" class="input-cb" /></td>
+				<td>{$u.Id}</td>
+				<td>{$u.gametype}</td>
+				<td>{$u.name}</td>
+				<td><a href="__URL__/edit/Id/{$u.Id}">编辑</a> <a href="__URL__/batch/act/delete/id/{$u.Id}">删除</a></td>
+			</tr>
+			</volist>
+			<tr>
+				<td colspan="6" align="left">
+					<input name="act" type="radio" value="delete" />删除
+					<input type="submit" value="提交" class="input-btn-c" />
+				</td>
+			</tr>
+		</table>
+		</form>
+		<include file="Public:paging" />
+	</switch>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

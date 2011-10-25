@@ -1,0 +1,70 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+		<h4>客服中心</h4>
+		<volist name="message" id="m">
+			<div class="message blank5_b">
+				<img src="../Public/images/picture.jpg" class="m_10 f_l" />
+				<div class="message-title t_r blank5">
+					<span class="f_l"><b>{$m.name}：</b></span><span>留言类型：{$m.types|msgType = ###}</span> 留言时间：{$m.postdate|date='Y-m-d H:i:s',###}
+				</div>
+				<div class="message-cont">
+					{$m.content}
+				</div>
+				<if condition="$m.reply neq ''">
+					<div class="message-reply">
+						<img src="../Public/images/picture_small.jpg" class="f_l" />
+						<div class="message-reply-cont"><b>管理员回复：</b>{$m.reply}<br />{$m.replydate|date='Y-m-d H:i:s',###}</div>
+						<div class="clear"></div>
+					</div>
+				</if>
+				<div class="clear"></div>
+			</div>
+		</volist>
+		<include file="paging" />
+		<h4>写留言</h4>
+		<form name="proform" method="post" action="__URL__/submitmsg">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>留言类型</th>
+				<td>
+					<select name="types" class="input-select">
+						<option value="0" selected="selected">&nbsp;留言&nbsp;</option>
+						<option value="1">&nbsp;建议&nbsp;</option>
+						<option value="2">&nbsp;投诉&nbsp;</option>
+						<option value="3">&nbsp;合作&nbsp;</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>姓名</th>
+				<td><input type="text" name="name" value="" class="input-b" />*必填</td>
+			</tr>
+			<tr>
+				<th>邮箱</th>
+				<td><input type="text" name="email" value="" class="input-b" />*必填</td>
+			</tr>
+			<tr>
+				<th>留言内容</th>
+				<td><textarea name="content" class="input-textarea f_l"></textarea>*必填</td>
+			</tr>
+			<tr>
+				<th>电话</th>
+				<td><input type="text" name="phone" value="" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>QQ/MSN</th>
+				<td><input type="text" name="qq" value="" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>验证码</th>
+				<td><input type="text" name="verify" value="" class="input-b" style="background: #FFF url(__URL__/verify) no-repeat right center;" />*必填</td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

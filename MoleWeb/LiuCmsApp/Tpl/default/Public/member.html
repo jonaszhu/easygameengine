@@ -1,0 +1,253 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r blank5">
+	<switch name="dsp">
+		<case value="register">
+		<h4>会员注册</h4>
+		<form name="memberform" method="post" action="__URL__/adds">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>用户名: <font color="#DF0101">*</font></th>
+				<td><input type="text" name="username" value="" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>密码: <font color="#DF0101">*</font></th>
+				<td><input type="password" name="password" value="" class="input-b" /></td>
+			</tr>		
+			<tr>
+				<th>确认密码: <font color="#DF0101">*</font></th>
+				<td><input type="password" name="passwordagain" value="" class="input-b" /></td>
+			</tr>	
+			<tr>
+				<th>邮箱: <font color="#DF0101">*</font></th>
+				<td><input type="text" name="email" value="" class="input-b" /></td>
+			</tr>	
+			<tr>
+				<th>&nbsp;</th>
+				<td></td>
+			</tr>	
+			<tr>
+				<th>性别: </th>
+				<td>
+				<select name="sex" class="input-b">
+					 <option value="0">我是美女</option>
+					 <option value="1">我是帅哥</option>
+				</select>				
+				</td>
+			</tr>	
+			<tr>
+				<th>真实姓名: </th>
+				<td><input type="text" name="realname" value="" class="input-b" /></td>
+			</tr>	
+			<tr>
+				<th>官方网站: </th>
+				<td><input type="text" name="homeplace" value="" class="input-b" /></td>
+			</tr>	
+			<tr>
+				<th>手机(电话): </th>
+				<td><input type="text" name="telephone" value="" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>QQ: </th>
+				<td><input type="text" name="QQ" value="" class="input-b" /></td>
+			</tr>	
+			<tr>
+				<th>头像: </th>
+				<td>
+					<SELECT name="avatar" onChange="document.x1.src='__ROOT__/avatars/'+options[selectedIndex].value"> 
+					<option value="0.jpg">头像0</option> 
+					<option value="1.jpg">头像1</option> 
+					<option value="2.jpg">头像2</option> 
+					<option value="3.jpg">头像3</option> 
+					<option value="4.jpg">头像4</option> 
+					<option value="5.jpg">头像5</option> 
+					<option value="6.jpg">头像6</option> 
+					<option value="7.jpg">头像7</option> 
+					<option value="8.jpg">头像8</option> 
+					<option value="9.jpg">头像9</option> 					
+					</SELECT> 
+					<img src="__ROOT__/avatars/0.jpg" name="x1" width="50" height="50">		
+				</td>
+			</tr>				
+			<tr>
+				<th></th>
+				<td><input name="protocol" type="checkbox" id="protocol" value="1" class="input-cb" />&nbsp;<a href="__ROOT__/index.php/Pages/pgid/2" target="_blank">我已阅读过并同意《软件使用条款》</a></td>
+			</tr>				
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>		
+		</case>	
+		<case value="change">
+		<h4>用户管理</h4>	
+		<ul class="product-ul f_l">
+		<switch name="dspT">
+			<case value="change">	
+				<form name="changed" method="post" action="__URL__/changed" class="login m_n">
+					<table border="0" cellspacing="1" class="tb-b">			
+						<tr>
+							<th>个人主页</th>
+							<td><input type="text" name="homeplace" value="{$homeplace}" class="input-b" /></td>
+						</tr>	
+						<tr>
+							<th>电话/手机</th>
+							<td><input type="text" name="telephone" value="{$telephone}" class="input-b" /></td>
+						</tr>	
+						<tr>
+							<th>QQ</th>
+							<td><input type="text" name="QQ" value="{$QQ}" class="input-b" /></td>
+						</tr>	
+						<tr>
+							<th>头像: </th>
+							<td>
+								<SELECT name="UserAvatar" onChange="document.x1.src='__ROOT__/avatars/'+options[selectedIndex].value"> 
+								<option value="0.jpg" <if condition="$UserAvatar eq '0.jpg'">selected</if> >头像0</option> 
+								<option value="1.jpg" <if condition="$UserAvatar eq '1.jpg'">selected</if> >头像1</option> 
+								<option value="2.jpg" <if condition="$UserAvatar eq '2.jpg'">selected</if> >头像2</option> 
+								<option value="3.jpg" <if condition="$UserAvatar eq '3.jpg'">selected</if> >头像3</option> 
+								<option value="4.jpg" <if condition="$UserAvatar eq '4.jpg'">selected</if> >头像4</option> 
+								<option value="5.jpg" <if condition="$UserAvatar eq '5.jpg'">selected</if> >头像5</option> 
+								<option value="6.jpg" <if condition="$UserAvatar eq '6.jpg'">selected</if> >头像6</option> 
+								<option value="7.jpg" <if condition="$UserAvatar eq '7.jpg'">selected</if> >头像7</option> 
+								<option value="8.jpg" <if condition="$UserAvatar eq '8.jpg'">selected</if> >头像8</option> 
+								<option value="9.jpg" <if condition="$UserAvatar eq '9.jpg'">selected</if> >头像9</option> 					
+								</SELECT> 
+								<img src="__ROOT__/avatars/{$UserAvatar}" name="x1" width="50" height="50">		
+							</td>
+						</tr>						
+					</table>
+					<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+				</form>
+			</case>
+			<case value="changepass">	
+				<form name="changepassd" method="post" action="__URL__/changepassd" class="login m_n">
+					<table border="0" cellspacing="1" class="tb-b">			
+						<tr>
+							<th>密码: <font color="#DF0101">*</font></th>
+							<td><input type="password" name="password" value="" class="input-b" /></td>
+						</tr>		
+						<tr>
+							<th>确认密码: <font color="#DF0101">*</font></th>
+							<td><input type="password" name="passwordagain" value="" class="input-b" /></td>
+						</tr>						
+					</table>
+					<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+				</form>
+			</case>			
+			<default />			
+				<table border="0" cellspacing="1" class="tb-b">
+					<tr>
+						<th>用户ID</th>
+						<td>{$uid}</td>
+					</tr>
+					<tr>
+						<th>用户昵称</th>
+						<td>{$username}</td>
+					</tr>		
+					<tr>
+						<th>用户Email</th>
+						<td>{$email}</td>
+					</tr>	
+					<tr>
+						<th>用户性别</th>
+						<td><if condition="$sex eq 0">女<else />男</if></td>
+					</tr>	
+					<tr>
+						<th>真实姓名</th>
+						<td>{$realname}</td>
+					</tr>	
+					<tr>
+						<th>个人主页</th>
+						<td>{$homeplace}</td>
+					</tr>	
+					<tr>
+						<th>电话/手机</th>
+						<td>{$telephone}</td>
+					</tr>	
+					<tr>
+						<th>QQ</th>
+						<td>{$QQ}</td>
+					</tr>	
+					<tr>
+						<th>&nbsp;</th>
+						<td>&nbsp;</td>
+					</tr>	
+					<tr>
+						<th>用户金币</th>
+						<td>{$Money}</td>
+					</tr>	
+					<tr>
+						<th>用户等级</th>
+						<td>{$Level}</td>
+					</tr>	
+					<tr>
+						<th>用户经验值</th>
+						<td>{$Experience}</td>
+					</tr>	
+					<tr>
+						<th>用户头像</th>
+						<td><img src="__ROOT__/avatars/{$UserAvatar}" width="50" height="50" /></td>
+					</tr>		
+					<tr>
+						<th>总游戏局数</th>
+						<td>{$TotalBureau}</td>
+					</tr>	
+					<tr>
+						<th>胜局数</th>
+						<td>{$SBureau}</td>
+					</tr>	
+					<tr>
+						<th>败局数</th>
+						<td>{$FailBureau}</td>
+					</tr>	
+					<tr>
+						<th>胜利率</th>
+						<td>{$SuccessRate}</td>
+					</tr>
+					<tr>
+						<th>逃跑率</th>
+						<td>{$RunawayRate}</td>
+					</tr>					
+				</table>
+		</switch>		
+		</ul>
+		<ul class="categroy-ul f_r">
+			<li class="categroy-title">管理菜单</li>
+			<li><a href="__URL__/userinfo" class="d_b">详细资料</a></li>
+			<li><a href="__URL__/changeinfo" class="d_b">修改资料</a></li>
+			<li><a href="__URL__/changepass" class="d_b">修改用户密码</a></li>
+			<li><a href="__URL__/index" class="d_b">充值记录</a></li>
+			<li><a href="__APP__/bank" class="d_b">在线充值</a></li>
+			<li><a href="__URL__/logout" class="d_b">安全退出</a></li>
+		</ul>		
+		</case>
+		<default />
+		<h4>用户登陆</h4>
+		<form name="login" method="post" action="__URL__/logins" class="login m_n">
+			<table border="0" cellspacing="1" class="tb-b">
+				<tr>
+					<th>用户名</th>
+					<td><input type="text" name="username" value="" class="input-a" /> * 必填</td>
+				</tr>
+				<tr>
+					<th>密码</th>
+					<td><input type="password" name="password" value="" class="input-a" /> * 必填</td>
+				</tr>
+				<tr>
+					<th>验证码</th>
+					<td><input type="text" name="verify" value="" class="input-a" style="background: #FFF url(__APP__/Member/verify) no-repeat right center;" /> * 必填</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;		
+					<input type="submit" name="submit" value="登陆" class="input-btn" />
+					<input type="button" name="Submit" value="注册" class="input-btn" onClick= "location.href='__URL__/reg'">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</switch>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

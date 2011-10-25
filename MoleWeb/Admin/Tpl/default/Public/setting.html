@@ -1,0 +1,70 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+		<h4>站点设置</h4>
+		<form name="settingform" method="post" action="__URL__/update">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>站点名称</th>
+				<td><input type="text" name="sitename" value="{$sitename|default="MoleWeb"}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>域名</th>
+				<td><input type="text" name="siteurl" value="<if condition="$siteurl eq ''">{$Think.config.LIUCMS_URL}<else />{$siteurl}</if>" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>标题附加字</th>
+				<td><input type="text" name="seotitle" value="{$seotitle}" class="input-b" /> 建议用 "|"、","(不含引号) 等符号分隔</td>
+			</tr>
+			<tr>
+				<th>关键字</th>
+				<td><input type="text" name="keywords" value="{$keywords}" class="input-b" /> 若有多个，用“,”分割</td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td><input type="text" name="description" value="{$description}" class="input-b" /> 出现在页面头部的 Meta 标签中，用于记录本页面的概要与描述</td>
+			</tr>
+			<tr>
+				<th>电子邮箱</th>
+				<td><input type="text" name="email" value="{$email}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>ICP/IP/域名备案</th>
+				<td><input type="text" name="icp" value="{$icp}" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		<h4>企业信息</h4>
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>企业名称</th>
+				<td><input type="text" name="company" value="{$company|default="MoleWeb"}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>联系人</th>
+				<td><input type="text" name="linkman" value="{$linkman}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>电话</th>
+				<td><input type="text" name="phone" value="{$phone}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>传真</th>
+				<td><input type="text" name="fax" value="{$fax}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>企业地址</th>
+				<td><input type="text" name="companyaddress" value="{$companyaddress}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>工厂厂址</th>
+				<td><input type="text" name="factoryaddress" value="{$factoryaddress}" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

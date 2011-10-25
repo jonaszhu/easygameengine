@@ -1,0 +1,18 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r blank5">
+		<h4>游戏介绍</h4>
+		<ul class="product-ul f_l">
+			<li>{$gameDec}</li>
+		</ul>
+		<ul class="categroy-ul f_r">
+			<li class="categroy-title">游戏导航</li>
+			<volist name="categroy" id="c">
+				<li><a href="__URL__/index/Id/{$c.Id}" class="d_b">{$c.name}</a></li>
+			</volist>
+		</ul>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

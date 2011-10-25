@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mole独立游戏开发平台后台管理系统</title>
+<link href="../Public/images/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="__ROOT__/Public/Css/linktips.css" type="text/css" />
+<script type="text/javascript" src="__ROOT__/Public/Js/jquery.js"></script>
+<script type="text/javascript" src="../Public/js/common.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/Js/linktips.js"></script>
+</head>
+<body>
+<div class="b-div">
+	<div class="header b-box">
+		<a href="__APP__"><div class="logo f_l"></div></a>
+		<div class="userinfo f_r"><if condition="Session::get(C('USER_AUTH_KEY')) neq ''">欢迎回来！ {$Think.session.admin} | <a href="__APP__/Toolbox#modify">修改帐户信息</a> | <a href="__ROOT__/index.php" target="_blank">网站主页</a> | <a href="__APP__/Public/logout">注销登陆</a><else /><a href="__ROOT__/index.php" target="_blank">网站主页</a></if></div>
+	</div>
+</div>

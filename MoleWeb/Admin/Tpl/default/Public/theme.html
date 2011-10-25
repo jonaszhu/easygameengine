@@ -1,0 +1,36 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+		<h4>主题设置</h4>
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>管理员总数</th>
+				<td>{$siteCount.usercount|default = 0}</td>
+				<td rowspan="6"></td>
+			</tr>
+			<tr>
+				<th>产品总数</th>
+				<td>{$siteCount.procount|default = 0}</td>
+			</tr>
+			<tr>
+				<th>分类总数</th>
+				<td>{$siteCount.catscount|default = 0}</td>
+			</tr>
+			<tr>
+				<th>新闻总数</th>
+				<td>{$siteCount.newscount|default = 0}</td>
+			</tr>
+			<tr>
+				<th>单页总数</th>
+				<td>{$siteCount.pagescount|default = 0}</td>
+			</tr>
+			<tr>
+				<th>留言总数</th>
+				<td>{$siteCount.msgcount|default = 0}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

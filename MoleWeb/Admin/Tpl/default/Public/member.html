@@ -1,0 +1,116 @@
+<include file="Public:header" />
+<link rel="stylesheet" href="__ROOT__/Public/Css/tipswindown.css" type="text/css" media="all" />
+<script type="text/javascript" src="__ROOT__/Public/Js/tipswindown.js"></script>
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+	<switch name="dsp">
+		<case value="add">
+		<h4>添加用户</h4>
+		<form name="memberform" method="post" action="__URL__/adds">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>用户名</th>
+				<td><input type="text" name="username" value="" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>密码</th>
+				<td><input type="password" name="password" value="" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>用户类型</th>
+				<td>
+				<select name="gtype" class="input-b">
+					 <option value="0">普通类型</option>
+					 <option value="1">管理员类型</option>
+				</select>
+				</td>
+			</tr>			
+			<tr>
+				<th>电子邮箱</th>
+				<td><input type="text" name="email" value="" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+		</case>
+		<case value="edit">
+		<h4>编辑用户</h4>
+		<form name="memberform" method="post" action="__URL__/edits">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>ID</th>
+				<td>{$uid}<input type="hidden" name="uid" value="{$uid}"></td>
+			</tr>
+			<tr>
+				<th>用户名</th>
+				<td>{$username}</td>
+			</tr>
+			<tr>
+				<th>新密码</th>
+				<td><input type="password" name="newpwd" value="" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>用户类型</th>
+				<td>
+				<select name="gtype" class="input-b">
+					 <option value="0" <if condition="$gtype eq 0">selected</if> >普通类型</option>
+					 <option value="1" <if condition="$gtype eq 1">selected</if> >管理员类型</option>
+				</select>
+				</td>
+			</tr>			
+			<tr>
+				<th>电子邮箱</th>
+				<td><input type="text" name="email" value="{$email}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>创建时间</th>
+				<td>{$createtime|date="Y-n-j H:i:s",###}</td>
+			</tr>
+			<tr>
+				<th>最后登陆时间</th>
+				<td><if condition="$lastlogintime eq ''">暂无登陆记录<else />{$lastlogintime|date="Y-n-j H:i:s",###}</if></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+		</case>
+		<default />
+		<h4>用户管理</h4>
+		<include file="Public:searchbar" />
+		<form name="memberform" method="post" action="__URL__/batch">
+		<table width="100%" border="0" cellspacing="1" class="tb-a blank5">
+			<tr>
+				<th width="20"><input name="checkbox" type="checkbox" class="input-cb" onClick="selAll(this)" /></th>
+				<th width="30">ID</th>
+				<th>用户名</th>
+				<th>用户类型</th>
+				<th>Email</th>
+				<th>最后登陆</th>
+				<th width="150">操作</th>
+			</tr>
+			<volist name="user" id="u">
+			<tr>
+				<td><input name="id[]" type="checkbox" id="id[]" value="{$u.uid}" class="input-cb" /></td>
+				<td>{$u.uid}</td>
+				<td><a href="#" id="userInfo" onClick="tipsWindown('用户信息','iframe:__URL__/userInfo/uid/{$u.uid}','800','600','true','','true','')">{$u.username}</a></td>
+				<td><if condition="$u.gtype eq 0">普通类型<else />管理员类型</if></td>
+				<td>{$u.email}</td>
+				<td><if condition="$u.lastlogintime eq ''">暂无登陆记录<else />{$u.lastlogintime|date="Y-n-j H:i:s",###}</if></td>
+				<td><a href="__URL__/edit/uid/{$u.uid}">编辑</a> <a href="__URL__/batch/act/delete/id/{$u.uid}">删除</a></td>
+			</tr>
+			</volist>
+			<tr>
+				<td colspan="6" align="left">
+					<input name="act" type="radio" value="delete" />删除
+					<input type="submit" value="提交" class="input-btn-c" />
+				</td>
+			</tr>
+		</table>
+		</form>
+		<include file="Public:paging" />
+	</switch>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

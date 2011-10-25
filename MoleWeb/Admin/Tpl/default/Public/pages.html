@@ -1,0 +1,97 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+	<switch name="dsp">
+		<case value="add">
+		<h4>发布单页</h4>
+		<form name="pagesform" method="post" action="__URL__/adds">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>标题</th>
+				<td><input type="text" name="title" value="" class="input-b" /><input type="hidden" name="uid" value="{$uid}"/></td>
+			</tr>
+			<tr>
+				<th>内容</th>
+				<td><html:editor id="editor" name="content" type="FCKeditor" content="" /></td>
+			</tr>
+			<tr>
+				<th>描述</th>
+				<td><input type="text" name="description" value="" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>关键字</th>
+				<td><input type="text" name="keywords" value="" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+		</case>
+		<case value="edit">
+		<h4>编辑单页</h4>
+		<form name="pagesform" method="post" action="__URL__/edits">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>ID</th>
+				<td>{$pgid}<input type="hidden" name="pgid" value="{$pgid}"></td>
+			</tr>
+			<tr>
+				<th>标题</th>
+				<td><input type="text" name="title" value="{$title}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>内容</th>
+				<td><html:editor id="editor" name="content" type="FCKeditor" content="{$content}" /></td>
+			</tr>
+			<tr>
+				<th>发布时间</th>
+				<td><input type="text" name="postdate" value="{$postdate|date='Y-n-j H:i:s',###}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>描述</th>
+				<td><input type="text" name="description" value="{$description}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>关键字</th>
+				<td><input type="text" name="keywords" value="{$keywords}" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+		</case>
+		<default />
+		<h4>单页管理</h4>
+		<include file="Public:searchbar" />
+		<form name="pagesform" method="post" action="__URL__/batch">
+		<table width="100%" border="0" cellspacing="1" class="tb-a blank5">
+			<tr>
+				<th width="20"><input name="checkbox" type="checkbox" class="input-cb" onClick="selAll(this)" /></th>
+				<th width="30">ID</th>
+				<th>标题</th>
+				<th>发布时间</th>
+				<th width="150">操作</th>
+			</tr>
+			<volist name="pgs" id="pg">
+			<tr>
+				<td><input name="id[]" type="checkbox" id="id[]" value="{$pg.pgid}" class="input-cb" /></td>
+				<td>{$pg.pgid}</td>
+				<td>{$pg.title}</td>
+				<td>{$pg.postdate|date="Y-n-j H:i:s",###}</td>
+				<td><a href="__URL__/edit/pgid/{$pg.pgid}">编辑</a> <a href="__URL__/batch/act/delete/id/{$pg.pgid}">删除</a></td>
+			</tr>
+			</volist>
+			<tr>
+				<td colspan="5" align="left">
+					<input name="act" type="radio" value="delete" />删除
+					<input type="submit" value="提交" class="input-btn-c" />
+				</td>
+			</tr>
+		</table>
+		</form>
+		<include file="Public:paging" />
+	</switch>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

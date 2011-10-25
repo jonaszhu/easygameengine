@@ -1,0 +1,26 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+	<switch name="dsp">
+		<case value="view">
+		<h4>新闻中心 >> {$title}</h4>
+		<div class="single-page">
+			<h3>{$title}</h3>
+			<div class="subtitle">发布时间：{$postdate|date='Y-n-j H:i:s',###}</div>
+			{$content}
+		</div>
+		</case>
+		<default />
+		<h4>新闻中心</h4>
+		<ul class="page-ul">
+			<volist name="news" id="n">
+				<li><a href="__URL__/nid/{$n.nid}" class="d_b t_r"><span class="f_l">{$n.title}</span>发布时间：{$n.postdate|date='Y-m-d H:i:s',###}<div class="clear"></div></a></li>
+			</volist>
+		</ul>
+		<include file="Public:paging" />
+	</switch>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

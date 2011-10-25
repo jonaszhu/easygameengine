@@ -1,0 +1,95 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+		<h4>管理员信息</h4>
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>当前用户</th>
+				<td>{$Think.session.admin} (<if condition="$userInfo['gtype'] eq 2">超级管理员<elseif condition="$userInfo['gtype'] eq 1"/>普通管理员</if>)</td>
+			</tr>
+			<tr>
+				<th>最后登录时间</th>
+				<td>{$userInfo.lastlogintime|date="Y-n-j H:i:s",###}</td>
+			</tr>
+		</table>
+		<h4>统计信息</h4>
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>管理员总数</th>
+				<td>{$siteCount.usercount|default = 0}</td>
+			</tr>
+			<tr>
+				<th>产品总数</th>
+				<td>{$siteCount.procount|default = 0}</td>
+			</tr>
+			<tr>
+				<th>分类总数</th>
+				<td>{$siteCount.catscount|default = 0}</td>
+			</tr>
+			<tr>
+				<th>新闻总数</th>
+				<td>{$siteCount.newscount|default = 0}</td>
+			</tr>
+			<tr>
+				<th>单页总数</th>
+				<td>{$siteCount.pagescount|default = 0}</td>
+			</tr>
+			<tr>
+				<th>留言总数</th>
+				<td>{$siteCount.msgcount|default = 0}</td>
+			</tr>
+		</table>
+		<h4>服务器信息</h4>
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>操作系统</th>
+				<td>{$osinfo}</td>
+			</tr>
+			<tr>
+				<th>运行环境</th>
+				<td>{$serverinfo}</td>
+			</tr>
+			<tr>
+				<th>MySQL版本</th>
+				<td>{$sqlinfo}</td>
+			</tr>
+			<tr>
+				<th>服务器IP</th>
+				<td>{$serverip}</td>
+			</tr>
+			<tr>
+				<th>服务器时间</th>
+				<td>{$servertime}</td>
+			</tr>
+			<tr>
+				<th>上传许可</th>
+				<td>{$upload}</td>
+			</tr>
+		</table>
+		<h4>软件信息</h4>
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>当前版本</th>
+				<td>MoleWeb v1.0 正式版</td>
+			</tr>
+			<tr>
+				<th>最新版本</th>
+				<td>{$latestversion}</td>
+			</tr>
+		</table>
+		<h4>版权信息</h4>
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>版权所有</th>
+				<td><a href="http://fengziliu.com" target="_blank">MoleWeb</a></td>
+			</tr>
+			<tr>
+				<th>联系信息</th>
+				<td>fensliu@gmail.com</td>
+			</tr>
+		</table>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

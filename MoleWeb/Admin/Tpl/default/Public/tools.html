@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>工具页面</title>
+<link href="../Public/images/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="__ROOT__/Public/Css/linktips.css" type="text/css" />
+<script type="text/javascript" src="__ROOT__/Public/Js/jquery.js"></script>
+<script type="text/javascript" src="../Public/js/common.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/Js/linktips.js"></script>
+</head>
+<body>
+<switch name="dsp">
+	<case value="cache">
+		<form name="cacheform" method="post" action="__URL__/clear">
+		<table border="0" cellspacing="1" class="tb-a" width="100%">
+			<tr>
+				<th colspan="4" style="font-weight:normal">更新缓存的时候，可能让服务器负载升高，请尽量避开访问的高峰时间</th>
+			</tr>
+			<tr>
+				<td width="30"><input name="id[]" type="checkbox" id="id[]" value="cache" /></td>
+				<td>模板缓存</td>
+				<td width="30"><input name="id[]" type="checkbox" id="id[]" value="temp" /></td>
+				<td>数据缓存</td>
+			</tr>
+			<tr>
+				<td><input name="id[]" type="checkbox" id="id[]" value="data" /></td>
+				<td>数据目录</td>
+				<td><input name="id[]" type="checkbox" id="id[]" value="logs" /></td>
+				<td>日志文件</td>
+			</tr>
+			<tr>
+				<td><input name="id[]" type="checkbox" id="id[]" value="runtime" /></td>
+				<td>核心缓存文件</td>
+				<td><input name="id[]" type="checkbox" id="id[]" value="app" /></td>
+				<td>项目编译缓存文件</td>
+			</tr>
+			<tr>
+				<td><input name="checkbox" type="checkbox" class="input-cb" onClick="selAll(this)" /></td><td colspan="3">全部更新</td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+	</case>
+	<case value="modify">
+	<form name="modifyform" method="post" action="__URL__/modifys">
+	<table border="0" cellspacing="1" class="tb-b">
+		<tr>
+			<th>用户名</th>
+			<td>{$username}<input type="hidden" name="uid" value="{$uid}" /></td>
+		</tr>
+		<tr>
+			<th>当前密码</th>
+			<td><input type="password" name="opassword" value="" class="input-b" /></td>
+		</tr>
+		<tr>
+			<th>新密码</th>
+			<td><input type="password" name="npassword" value="" class="input-b" /></td>
+		</tr>
+		<tr>
+			<th>电子邮箱</th>
+			<td><input type="text" name="email" value="{$email}" class="input-b" /></td>
+		</tr>
+		<tr>
+			<th>创建时间</th>
+			<td>{$createtime|date="Y-n-j H:i:s",###}</td>
+		</tr>
+		<tr>
+			<th>最后登陆</th>
+			<td>{$lastlogintime|date="Y-n-j H:i:s",###}</td>
+		</tr>
+	</table>
+	<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+	</form>
+	</case>
+	<case value="userInfo">		
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>用户ID</th>
+				<td>{$uid}</td>
+			</tr>
+			<tr>
+				<th>用户昵称</th>
+				<td>{$username}</td>
+			</tr>		
+			<tr>
+				<th>用户Email</th>
+				<td>{$email}</td>
+			</tr>	
+			<tr>
+				<th>用户性别</th>
+				<td><if condition="$sex eq 0">女<else />男</if></td>
+			</tr>
+			<tr>
+				<th>用户性别</th>
+				<td><if condition="$gtype eq 0">普通类型<else />管理员类型</if></td>
+			</tr>			
+			<tr>
+				<th>真实姓名</th>
+				<td>{$realname}</td>
+			</tr>	
+			<tr>
+				<th>个人主页</th>
+				<td>{$homeplace}</td>
+			</tr>	
+			<tr>
+				<th>电话/手机</th>
+				<td>{$telephone}</td>
+			</tr>	
+			<tr>
+				<th>QQ</th>
+				<td>{$QQ}</td>
+			</tr>	
+			<tr>
+				<th>&nbsp;</th>
+				<td>&nbsp;</td>
+			</tr>	
+			<tr>
+				<th>用户金币</th>
+				<td>{$Money}</td>
+			</tr>	
+			<tr>
+				<th>用户等级</th>
+				<td>{$Level}</td>
+			</tr>	
+			<tr>
+				<th>用户经验值</th>
+				<td>{$Experience}</td>
+			</tr>	
+			<tr>
+				<th>用户头像</th>
+				<td><img src="__ROOT__/avatars/{$UserAvatar}" width="50" height="50" /></td>
+			</tr>		
+			<tr>
+				<th>总游戏局数</th>
+				<td>{$TotalBureau}</td>
+			</tr>	
+			<tr>
+				<th>胜局数</th>
+				<td>{$SBureau}</td>
+			</tr>	
+			<tr>
+				<th>败局数</th>
+				<td>{$FailBureau}</td>
+			</tr>	
+			<tr>
+				<th>胜利率</th>
+				<td>{$SuccessRate}</td>
+			</tr>
+			<tr>
+				<th>逃跑率</th>
+				<td>{$RunawayRate}</td>
+			</tr>					
+		</table>
+	</case>	
+	<case value="slide">
+		<div>
+			<a href="__URL__/slide/act/add"><div class="b-btn f_l blank5_r">添加/发布</div></a>
+			<div class="clear"></div>
+		</div>
+		<form name="slideform" method="post" action="__URL__/slide/act/delete">
+		<table width="100%" border="0" cellspacing="1" class="tb-a blank5">
+			<tr>
+				<th width="20"><input name="checkbox" type="checkbox" class="input-cb" onClick="selAll(this)" /></th>
+				<th width="30">ID</th>
+				<th>标题</th>
+				<th>描述</th>
+				<th>链接</th>
+				<th width="150">操作</th>
+			</tr>
+			<volist name="slide" id="s">
+			<tr>
+				<td><input name="id[]" type="checkbox" id="id[]" value="{$s.sid}" class="input-cb" /></td>
+				<td>{$s.sid}</td>
+				<td>{$s.title}</td>
+				<td>{$s.content|msubstr=0,12,'utf-8',suffix=true}</td>
+				<td>{$s.url|default="暂无"}</td>
+				<td><a href="__URL__/slide/act/edit/sid/{$s.sid}">编辑</a> <a href="__URL__/slide/act/delete/id/{$s.sid}">删除</a></td>
+			</tr>
+			</volist>
+			<tr>
+				<td colspan="6" align="left">
+					<input name="act" type="radio" value="delete" />删除
+					<input type="submit" value="提交" class="input-btn-c" />
+				</td>
+			</tr>
+		</table>
+		</form>
+	</case>
+	<case value="addslide">
+		<div>
+			<a href="__URL__/slide"><div class="b-btn f_l blank5_r">返回幻灯片管理</div></a>
+			<div class="clear"></div>
+		</div>
+		<form name="slideform" method="post" action="__URL__/addslide" enctype="multipart/form-data">
+		<table border="0" cellspacing="1" class="tb-b blank5">
+			<tr>
+				<th>标题</th>
+				<td><input type="text" name="title" value="" class="input-b" /><input type="hidden" name="uid" value="{$uid}"/></td>
+			</tr>
+			<tr>
+				<th>描述</th>
+				<td><textarea name="content" class="input-textarea"></textarea></td>
+			</tr>
+			<tr>
+				<th>图片</th>
+				<td><font color="#990000">图片最佳大小778*300</font><input type="file"  name="attachment" value="" ></td>
+			</tr>
+			<tr>
+				<th>链接</th>
+				<td><input type="text" name="url" value="" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+	</case>
+	<case value="editslide">
+		<div>
+			<a href="__URL__/slide"><div class="b-btn f_l blank5_r">返回幻灯片管理</div></a>
+			<div class="clear"></div>
+		</div>
+		<form name="slideform" method="post" action="__URL__/editslide" enctype="multipart/form-data">
+		<table border="0" cellspacing="1" class="tb-b blank5">
+			<tr>
+				<th>ID</th>
+				<td>{$sid}<input type="hidden" name="sid" value="{$sid}"></td>
+			</tr>
+			<tr>
+				<th>标题</th>
+				<td><input type="text" name="title" value="{$title}" class="input-b" /><input type="hidden" name="uid" value="{$uid}"/></td>
+			</tr>
+			<tr>
+				<th>描述</th>
+				<td><textarea name="content" class="input-textarea">{$content}</textarea></td>
+			</tr>
+			<tr>
+				<th>图片</th>
+				<td><font color="#990000">图片最佳大小778*300</font><input type="file"  name="attachment" value="{$attachment}" > <a href="#" onmouseover="tooltip.show('<img src=__ROOT__/Attachments/Slide/{$attachment} height=160 />');" onmouseout=tooltip.hide(); >查看当前图片</a></td>
+			</tr>
+			<tr>
+				<th>链接</th>
+				<td><input type="text" name="url" value="{$url}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>上传时间</th>
+				<td><input type="text" name="postdate" value="{$postdate|date="Y-m-d H:i:s",###}" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+	</case>
+	<case value="navigation">
+		<form name="navform" method="post" action="__URL__/navigation/act/add">
+			<table border="0" cellspacing="1" class="tb-c t_c">
+				<tr>
+					<td>名称</td>
+					<td><input type="text" name="name" value=""  class="input-c" /></td>
+					<td>链接</td>
+					<td><input type="text" name="url" value="http://"  class="input-c" /></td>
+					<td>排序</td>
+					<td width="60"><input type="text" name="orders" value=""  class="input-c" /></td>
+					<th><a href="#" onclick="javascript:document.navform.submit()" class="link-a">添加</a></th>
+				</tr>
+			</table>
+		</form>
+		<table border="0" cellspacing="1" class="tb-a blank5" width="100%">
+			<tr>
+				<th width="60">排序</th>
+				<th>名称</th>
+				<th>链接</th>
+				<th width="150">操作</th>
+			</tr>
+			<volist name="navigation" id="ng">
+				<form name="navfrom{$ng.ngid}" method="post" action="__URL__/navigation/act/edit">
+					<tr>
+						<td><input type="hidden" name="ngid" value="{$ng.ngid}" /><input type="text" name="orders" value="{$ng.orders}"  class="input-c t_c" /></td>
+						<td><input type="text" name="name" value="{$ng.name}"  class="input-c" /></td>
+						<td><input type="text" name="url" value="{$ng.url}"  class="input-c" /></td>
+						<td>
+							<input type="submit" value="修改" class="input-btn-d" />
+							<a href="__URL__/navigation/act/delete/id/{$ng.ngid}"><input type="button" value="删除" class="input-btn-d" /></a>	
+						</td>
+					</tr>
+				</form>
+			</volist>
+		</table>
+	</case>
+<default />
+</switch>
+</body>
+</html>

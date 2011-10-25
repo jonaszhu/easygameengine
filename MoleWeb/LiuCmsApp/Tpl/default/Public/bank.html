@@ -1,0 +1,38 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r blank5">
+	<switch name="dsp">
+		<default />
+		<h4>支付宝充值</h4>
+		<form name="bankZFB" method="post" action="__URL__/bankZFB" class="login m_n">
+			<table border="0" cellspacing="1" class="tb-b">
+				<tr>
+					<th>充值用户名</th>
+					<td><input type="text" name="username" value="" class="input-a" /> * 必填</td>
+				</tr>
+				<tr>
+					<th>充值金额</th>
+					<td>
+					 <select name="gmoney" class="input-b">
+					 <option value="5">5.0000</option>
+					 <option value="10">10.0000</option>
+					 <option value="50">50.0000</option>
+					 <option value="100">100.0000</option>
+					 <option value="200">200.0000</option>
+					 <option value="300">300.0000</option>
+					 </select>
+				    </td>
+				</tr>
+				<tr>
+					<th>验证码</th>
+					<td><input type="text" name="verify" value="" class="input-a" style="background: #FFF url(__APP__/Member/verify) no-repeat right center;" /> * 必填</td>
+				</tr>
+			</table>
+			<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+	</switch>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

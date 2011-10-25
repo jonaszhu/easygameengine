@@ -1,0 +1,19 @@
+	<script language="javascript">
+		$(document).ready(function() {
+			$('#slider').s3Slider({
+				timeOut: 4000 
+			});
+		});
+	</script>
+	<link href="__ROOT__/Public/Css/s3Slider.css" rel="stylesheet" type="text/css" />
+	<div id="slider" class="b-area-w f_r">
+        <ul id="sliderContent">
+			<volist name="slide" id="s">
+            	<li class="sliderImage">
+                	<a href="{$s.url}"><img src="__ROOT__/Attachments/Slide/{$s.attachment}" width="778" height="300" /></a>
+                	<span class="bottom"><strong>{$s.title}</strong><br />{$s.content}</span>
+				</li>
+			</volist>
+            <div class="clear sliderImage"></div>
+        </ul>
+    </div>

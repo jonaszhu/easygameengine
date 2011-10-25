@@ -1,0 +1,22 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<include file="Public:slide" />
+	<div class="b-area-w f_r blank5">
+		<h4>新品展示</h4>
+		<script type="text/javascript" src="__ROOT__/Public/Js/linktips.js"></script>
+		<link rel="stylesheet" href="__ROOT__/Public/Css/linktips.css" type="text/css" />
+		<table border="0" cellspacing="1" class="tb-new-product">
+			<tr>
+				<volist name="nproducts" id="np">
+					<td>
+						<a href="__APP__/Products/pid/{$np.pid}" onmouseover="tooltip.show('<img src={$np.attachment|getProImg = ###} height=160 />');" onmouseout=tooltip.hide(); ><img src="{$np.attachment|getProImg = ###}" width="120" height="80" /></a>
+						<b><a href="__APP__/Products/pid/{$np.pid}">{$np.title}</a></b><br />{$np.content|msubstr=0,60,'utf-8',suffix=true}
+					</td>
+				</volist>
+			</tr>
+		</table>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

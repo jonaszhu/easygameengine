@@ -1,0 +1,8 @@
+/*
+ * Fengzi
+*/
+#tt { DISPLAY: block; POSITION: absolute }
+#tttop { BORDER-TOP: #333 1px solid; DISPLAY: block; OVERFLOW: hidden; HEIGHT: 0px }
+#ttcont { BORDER-RIGHT: #333 1px solid; BORDER-LEFT: #333 1px solid; padding: 5px; DISPLAY: block; BACKGROUND: #fff; COLOR: #000; font-size: 12px; line-height: 18px; }
+#ttbot { DISPLAY: block; OVERFLOW: hidden; HEIGHT: 20px; background: url(Img/bottom.gif) no-repeat left top; }
+#tttop, #ttcont, #ttbot { margin-left: -23px; _margin-left: 0px; }

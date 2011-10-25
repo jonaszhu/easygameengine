@@ -1,0 +1,111 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+	<switch name="dsp">
+		<case value="view">
+		<h4>编辑新闻</h4>
+		<form name="newsform" method="post" action="__URL__/reply">
+		<table border="0" cellspacing="1" class="tb-b">
+			<tr>
+				<th>ID</th>
+				<td>{$mid}<input type="hidden" name="mid" value="{$mid}"></td>
+			</tr>
+			<tr>
+				<th>姓名</th>
+				<td><input type="text" name="name" value="{$name}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>留言内容</th>
+				<td><textarea name="content" class="input-textarea">{$content}</textarea></td>
+			</tr>
+			<tr>
+				<th>留言类型</th>
+				<td>
+					<switch name="types">
+						<case value="1">建议</case>
+						<case value="2">投诉</case>
+						<case value="3">合作</case>
+						<default />留言
+					</switch>
+				</td>
+			</tr>
+			<tr>
+				<th>邮箱</th>
+				<td><input type="text" name="email" value="{$email}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>电话</th>
+				<td><input type="text" name="phone" value="{$phone}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>QQ/MSN</th>
+				<td><input type="text" name="qq" value="{$qq}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>留言时间</th>
+				<td><input type="text" name="postdate" value="{$postdate|date='Y-n-j H:i:s',###}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>IP</th>
+				<td><input type="text" name="clientip" value="{$clientip}" class="input-b" /></td>
+			</tr>
+			<tr>
+				<th>回复</th>
+				<td><textarea name="reply" class="input-textarea">{$reply}</textarea></td>
+			</tr>
+			<tr>
+				<th>回复时间</th>
+				<td><input type="text" name="replydate" value="<if condition="$replydate eq ''">{$Think.now}<else />{$replydate|date='Y-n-j H:i:s',###}</if>" class="input-b" /></td>
+			</tr>
+		</table>
+		<div align="center"><input type="submit" value="提交" class="input-btn-b" /></div>
+		</form>
+		</case>
+		<default />
+		<h4>留言管理</h4>
+		<include file="Public:searchbar" />
+		<form name="newsform" method="post" action="__URL__/batch">
+		<table width="100%" border="0" cellspacing="1" class="tb-a blank5">
+			<tr>
+				<th width="20"><input name="checkbox" type="checkbox" class="input-cb" onClick="selAll(this)" /></th>
+				<th width="30">ID</th>
+				<th>姓名</th>
+				<th>留言类型</th>
+				<th>留言时间</th>
+				<th>回复</th>
+				<th width="150">操作</th>
+			</tr>
+			<volist name="message" id="m">
+			<tr>
+				<td><input name="id[]" type="checkbox" id="id[]" value="{$m.mid}" class="input-cb" /></td>
+				<td>{$m.mid}</td>
+				<td>{$m.name}</td>
+				<td>
+					<switch name="m.types">
+						<case value="1">建议</case>
+						<case value="2">投诉</case>
+						<case value="3">合作</case>
+						<default />留言
+					</switch>
+				</td>
+				<td>{$m.postdate|date="Y-n-j H:i:s",###}</td>
+				<td><if condition="$m.reply neq ''">已回复<else />未回复</if></td>
+				<td><a href="__URL__/view/mid/{$m.mid}">查看/回复</a> <a href="__URL__/batch/act/delete/id/{$m.mid}">删除</a></td>
+			</tr>
+			</volist>
+			<tr>
+				<td colspan="7" align="left">
+					<input name="act" type="radio" value="del" />删除
+					<input type="submit" value="提交" class="input-btn-c" />
+				</td>
+			</tr>
+		</table>
+		</form>
+		<include file="Public:paging" />
+	</switch>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

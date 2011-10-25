@@ -1,0 +1,54 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r">
+	<switch name="dsp">
+		<case value="view">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="__ROOT__/Public/Js/FancyBox/jquery.mousewheel-3.0.2.pack.js"></script>
+		<script type="text/javascript" src="__ROOT__/Public/Js/FancyBox/jquery.fancybox-1.3.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Js/FancyBox/jquery.fancybox-1.3.1.css" media="screen" />
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("a#viewimg").fancybox({
+					'titleShow'	: false
+				});
+			});
+		</script>
+		<h4>产品展示 >> {$title}</h4>
+		<div class="single-page">
+			<h3>{$title}</h3>
+			<div class="pro-info">
+				<if condition="$attachment neq ''"><a href="__ROOT__/Attachments/Products/{$attachment}" target="_blank" id="viewimg" title="按ESC键退出"><img src="{$attachment|getProImg = ###}" width="360" class="f_l m_5_r" /></a><else /><img src="__ROOT__/Attachments/Products/noimg.jpg" width="360" class="f_l m_5_r" /></if>
+				<ul class="pro-info-ul f_r">
+					<li class="pro-info-title">产品参数</li>
+					<li>产品型号：{$pattern}</li>
+					<volist name="par" id="par">
+						<li>{$par}</li>
+					</volist>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			{$content}
+		</div>
+		</case>
+		<default />
+		<h4>产品展示</h4>
+		<ul class="product-ul f_l">
+			<volist name="products" id="p">
+				<li><a href="__URL__/pid/{$p.pid}" class="d_b"><img src="{$p.attachment|getProImg = ###}" width="120" height="80" class="f_l m_5_r" /><b>{$p.title}</b><br />型号：{$p.pattern}<div class="clear"></div></a></li>
+			</volist>
+		</ul>
+		<ul class="categroy-ul f_r">
+			<li class="categroy-title">产品导航</li>
+			<volist name="categroy" id="c">
+				<li><a href="__URL__/cid/{$c.cid}" class="d_b">{$c.name}</a></li>
+			</volist>
+		</ul>
+		<div class="clear"></div>
+		<div class="pages t_r">&nbsp;{$pages}</div>
+	</switch>
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />

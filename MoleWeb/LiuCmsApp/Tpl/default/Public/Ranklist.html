@@ -1,0 +1,30 @@
+<include file="Public:header" />
+<div class="cbody b-box blank10">
+	<include file="Public:menu" />
+	<div class="b-area-w f_r blank5">
+		<h4>玩家排行</h4>
+		<table width="100%" border="0" cellspacing="1" class="tb-a blank5">
+			<tr>
+				<th width="30">名次</th>
+				<th>用户ID</th>
+				<th>用户昵称</th>
+				<th>用户金币</th>
+				<th>用户等级</th>
+				<th>用户经验</th>
+			</tr>
+			<volist name="rlist" id="rl">
+			<tr>
+				<td>{$rl.rank}</td>
+				<td>{$rl.UserId}</td>
+				<td>{$rl.rname}</td>
+				<td>{$rl.Money}</td>
+				<td>{$rl.Level}</td>
+				<td>{$rl.Experience}</td>
+			</tr>
+			</volist>
+		</table>
+		<include file="Public:paging" />
+	</div>
+	<div class="clear"></div>
+</div>
+<include file="Public:footer" />
