@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RobotConfig>
+	<Robot Name="robot1" Money="2000" Level="1" Experience="100" UserAvatar="1.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot2" Money="2000" Level="1" Experience="100" UserAvatar="2.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot3" Money="2000" Level="1" Experience="100" UserAvatar="3.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot4" Money="2000" Level="1" Experience="100" UserAvatar="4.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot5" Money="2000" Level="1" Experience="100" UserAvatar="5.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot6" Money="2000" Level="1" Experience="100" UserAvatar="6.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot7" Money="2000" Level="1" Experience="100" UserAvatar="7.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot8" Money="2000" Level="1" Experience="100" UserAvatar="8.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot9" Money="2000" Level="1" Experience="100" UserAvatar="5.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot10" Money="2000" Level="1" Experience="100" UserAvatar="6.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot11" Money="2000" Level="1" Experience="100" UserAvatar="7.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+	<Robot Name="robot12" Money="2000" Level="1" Experience="100" UserAvatar="8.jpg" TotalBureau="0" SBureau="0" FailBureau="0" SuccessRate="0.0" RunawayRate="0.0" />
+</RobotConfig>

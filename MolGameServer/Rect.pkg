@@ -1,0 +1,56 @@
+$#include "Rect.h"
+
+/**
+ * 矩形模板类
+ */
+class CMolRect
+{
+	TOLUA_TEMPLATE_BIND(T, int, double)
+	
+    public:
+        /// 构造函数
+        CMolRect();
+        /// 构造函数
+        CMolRect(T x,T y,T x2,T y2);
+        /// 构造函数
+        CMolRect(const CMolPosition2d<T>& upperLeft,const CMolPosition2d<T>& lowerRight);
+        /// 构造函数
+        CMolRect(const CMolPosition2d<T>& pos,const CMolDimension2d<T>& size);
+
+        /// 加运算
+        CMolRect<T> operator+(const CMolPosition2d<T>& pos) const;
+        /// 减运算
+        CMolRect<T>& operator-(const CMolPosition2d<T>& pos) const;		
+        /// 相等运算
+        bool operator==(const CMolRect<T>& other) const;
+
+        /// 返回矩形的大小
+        T getArea() const;
+        /// 检测一个点是否在矩形范围内
+        bool isPointInside(const CMolPosition2d<T>& pos) const;
+        /// 检测是否和另一个矩形相交
+        bool isRectCollided(const CMolRect<T>& other) const;
+        /// 重合两个矩形
+        void clipAgainst(const CMolRect<T>& other);
+        /// 移动矩形到指定矩形中
+     	bool constrainTo(const CMolRect<T>& other);
+		/// 得到矩形的宽度
+		T getWidth() const;
+		/// 得到矩形的高度
+		T getHeight() const;
+		/// 修复矩形
+		void repair();
+		/// 矩形是否可用
+		bool isValid() const;
+		/// 返回矩形的中心点
+		CMolPosition2d<T> getCenter() const;
+		/// 得到矩形的高宽
+		CMolDimension2d<T> getSize() const;
+		/// 添加一个点到矩形中，以便让它改变大小
+		void addInternalPoint(const CMolPosition2d<T>& p);
+		/// 根据矩形中内部的一个点改变矩形的大小
+		void addInternalPoint(T x,T y);
+		
+	CMolPosition2d<T> UpperLeftCorner;
+	CMolPosition2d<T> LowerRightCorner;		
+};

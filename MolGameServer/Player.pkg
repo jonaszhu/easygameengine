@@ -1,0 +1,101 @@
+$#include "Player.h"
+
+/**
+ * 玩家状态
+ */
+enum PlayerState
+{
+	PLAYERSTATE_NORAML = 0,             // 正常状态
+	PLAYERSTATE_QUEUE,                  // 排队状态
+	PLAYERSTATE_READY,                  // 准备状态
+	PLAYERSTATE_GAMING,                 // 游戏中状态
+	PLAYERSTATE_LOSTLINE                // 掉线状态
+};
+
+/** 
+ * 玩家类型
+ */
+enum PlayerType
+{
+	PLAYERTYPE_NORMAL = 0,              // 普通用户
+	PLAYERTYPE_ROBOT                    // 机器人用户
+};
+
+class Player
+{
+public:
+	/// 设置玩家ID
+	inline void SetID(int id);
+	/// 得到玩家ID
+	inline int GetID(void);
+	/// 设置玩家连接ID
+	inline void SetConnectID(int id);
+	/// 得到玩家连接ID
+	inline int GetConnectID(void);
+	/// 设置玩家所在的房间ID
+	inline void SetRoomId(int id);
+	/// 得到玩家所在的房间ID
+	inline int GetRoomId(void);
+	/// 设置玩家类型
+	inline void SetType(PlayerType type);
+	/// 得到玩家类型
+	inline PlayerType GetType(void);
+	/// 设置玩家在房间中的索引
+	inline void SetRoomIndex(int index);
+	/// 得到玩家在房间中的索引
+	inline int GetRoomIndex(void);
+	/// 设置玩家的心跳计数
+	inline void SetHeartCount(int count);
+	/// 得到玩家的心跳计数
+	inline int GetHeartCount(void);
+	/// 设置玩家名称
+	inline void SetName(std::string name);
+	/// 得到玩家名称
+	inline std::string GetName(void);
+	/// 得到玩家状态
+	inline PlayerState GetState(void);
+	/// 设置玩家状态
+	inline void SetState(PlayerState state);
+	/// 设置是否旁观
+	inline void SetLookOn(bool isLook);
+	/// 得到是否旁观
+	inline bool IsLookOn(void);
+
+	/// 设置玩家金钱数量
+	inline void SetMoney(double money);
+	/// 得到玩家金币数量
+	inline double GetMoney(void);
+	/// 设置玩家等级
+	inline void SetLevel(int level);
+	/// 得到玩家等级
+	inline int GetLevel(void);
+	/// 设置玩家经验值
+	inline void SetExperience(unsigned int exp);
+	/// 得到玩家经验值
+	inline unsigned int GetExperience(void);
+	/// 设置玩家头像
+	inline void SetUserAvatar(std::string ava);
+	/// 得到玩家头像
+	inline std::string GetUserAvatar(void);
+	/// 设置玩家总局
+	inline void SetTotalBureau(int bureau);
+	/// 得到玩家总局
+	inline int GetTotalBureau(void);
+	/// 设置玩家赢局
+	inline void SetSuccessBureau(int bureau);
+	/// 得到玩家赢局
+	inline int GetSuccessBureau(void);
+	/// 设置玩家输局
+	inline void SetFailBureau(int bureau);
+	/// 得到玩家输局
+	inline int GetFailBureau(void);
+	/// 设置玩家胜率
+	inline void SetSuccessRate(float rate);
+	/// 得到玩家胜率
+	inline float GetSuccessRate(void);
+	/// 设置玩家逃跑率
+	inline void SetRunawayrate(float rate);
+	/// 得到玩家逃跑率
+	inline float GetRunawayrate(void);
+};
+

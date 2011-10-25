@@ -1,0 +1,29 @@
+$#include "Position2d.h"
+
+/**
+ * 一个简单的存储2D坐标的类
+ */
+class CMolPosition2d
+{
+	TOLUA_TEMPLATE_BIND(T, int, double)
+	
+public:
+    /// 构造函数
+    CMolPosition2d();
+    /// 构造函数
+    CMolPosition2d(T x, T y);
+    /// 构造函数
+    CMolPosition2d(const CMolPosition2d<T>& other);
+
+    /// 等于操作
+    bool operator == (const CMolPosition2d<T>& other) const;
+
+    CMolPosition2d<T> operator-(const CMolPosition2d<T>& other) const;
+    CMolPosition2d<T> operator+(const CMolPosition2d<T>& other) const;
+    CMolPosition2d<T> operator*(const CMolPosition2d<T>& other) const;
+    CMolPosition2d<T> operator+(const CMolDimension2d<T>& other) const;
+    CMolPosition2d<T> operator-(const CMolDimension2d<T>& other) const;
+
+    T X;                /**< 坐标X */
+    T Y;                /**< 坐标Y */
+};

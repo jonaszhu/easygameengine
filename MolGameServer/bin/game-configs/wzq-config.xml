@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ServerConfig>
+    <GameServerConfig>
+        <Configure Name="ServerName" Value="五子棋100普通房间END" />
+        <Configure Name="ServerIp" Value="127.0.0.1" />
+        <Configure Name="ServerPort" Value="1235" />
+        <Configure Name="isQueueEnter" Value="0" />
+    </GameServerConfig>
+    <CenterServerConfig>
+        <Configure Name="ServerIp" Value="127.0.0.1" />
+        <Configure Name="Port" Value="5678" />
+    </CenterServerConfig>
+    <DebugServerConfig>
+        <Configure Name="IsStart" Value="0" />
+        <Configure Name="ServerIp" Value="127.0.0.1" />
+        <Configure Name="Port" Value="5679" />
+        <Configure Name="Password" Value="12345" />
+    </DebugServerConfig>
+    <GameRoomConfig>
+        <Configure Name="GameId" Value="300002" />
+        <Configure Name="GameName" Value="五子棋普通房间END" />
+        <Configure Name="GameType" Value="0" />
+        <Configure Name="PlayerCount" Value="2" />
+        <Configure Name="TableCount" Value="500" />
+        <Configure Name="Revenue" Value="0" />
+        <Configure Name="LastMoney" Value="100" />
+        <Configure Name="RobotCount" Value="1000" />
+        <Configure Name="ScriptPath" Value="F:\我的游戏引擎\MolGameServer\bin\wzq-scripts" />
+    </GameRoomConfig>
+    <RobotConfig>
+        <Configure Name="isStartRobot" Value="1" />
+        <Configure Name="RobotCount" Value="1000" />
+        <Configure Name="robotStartID" Value="9000" />
+        <Configure Name="RobotConfigPath" Value="F:\我的游戏引擎\MolGameServer\bin\game-configs\ddz-robotconfig1000.rob" />
+    </RobotConfig>
+    <GameDataBaseConfig>
+        <Configure Name="ServerIp" Value="127.0.0.1" />
+        <Configure Name="ServerPort" Value="3306" />
+        <Configure Name="DataBaseName" Value="moleweb" />
+        <Configure Name="UserName" Value="root" />
+        <Configure Name="UserPassword" Value="akinggw" />
+    </GameDataBaseConfig>
+</ServerConfig>

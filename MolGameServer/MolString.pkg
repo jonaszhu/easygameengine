@@ -1,0 +1,26 @@
+$#include "MolNet/MolString.h"
+
+/** 
+ * 自定义字符串处理类，主要用于解决字符串的网络传输中崩溃问题
+ */
+class CMolString
+{
+public:
+	/// 构造函数
+	CMolString();
+	/// 带参数的构造函数
+	CMolString(std::string str);
+	/// 带参数的构造函数2
+	CMolString(const char* begin,int length);
+
+	/// 得到字符串
+	char* c_str(void);
+	/// 取得指定位置的字符串
+	char at(int index);
+	/// 清空字符串
+	void clear(void);
+	/// 检测字符串是否为空
+	bool empty(void);
+	/// 得到字符串的长度
+	int length(void);
+};

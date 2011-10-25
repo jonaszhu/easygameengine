@@ -1,0 +1,27 @@
+$#include "Dimension2d.h"
+
+class CMolDimension2d
+{
+	TOLUA_TEMPLATE_BIND(T, int, double)
+
+public:
+	/// 构造函数
+	CMolDimension2d();
+	/// 构造函数
+	CMolDimension2d(const T& width,const T& height);
+
+	/// 等于操作
+	bool operator==(const CMolDimension2d<T>& other) const;
+	/// 设置新的参数
+	CMolDimension2d<T>& set(const T& width,const T& height);
+	/// 除操作
+	CMolDimension2d<T> operator/(const T& scale) const;
+	/// 乘以操作
+	CMolDimension2d<T> operator*(const T& scale) const;
+	/// 得到范围值
+	T getArea() const;
+	
+	T Width;           /**< 区域的宽度 */
+	T Height;          /**< 区域的高度 */
+};
+

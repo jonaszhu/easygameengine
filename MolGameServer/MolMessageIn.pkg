@@ -1,0 +1,24 @@
+$#include "MolNet/MolMessageIn.h"
+
+/**
+* 用于处理输入信息
+*/
+class CMolMessageIn : public CVMemPool<CMolMessageIn>
+{
+public:
+	/// 得到消息ID
+	int getId() const { return mId; }
+	/// 得到消息的总长度
+	int getLength() const { return mLength; }
+	/// 读取一个BYTE数据
+	int readByte();
+	/// 读取一个short数据
+	int readShort();
+	/// 读取一个long数据
+	int readLong();
+	/// 读取一个字符串，如果长度为-1的话，长度就存储在字符串开始的第一个short中
+	CMolString readString(int length = -1);
+	/// 返回没有读取的数据的长度
+	int getUnreadLength() const;
+};
+

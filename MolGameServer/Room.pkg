@@ -1,0 +1,133 @@
+$#include "Room.h"
+
+/**
+ * 房间类型
+ */
+enum RoomType
+{
+	ROOMTYPE_JINBIN = 0,             // 金币房间
+	ROOMTYPE_JIFEN,                  // 积分房间
+	ROOMTYPE_BISAI,                  // 比赛房间
+	ROOMTYPE_LIANXI,                 // 练习房间
+	ROOMTYPE_NULL
+};
+
+/**
+ * 房间当前状态
+ */
+enum RoomState
+{
+	ROOMSTATE_WAITING = 0,             // 等待中
+	ROOMSTATE_GAMING,                  // 游戏中
+	ROOMSTATE_NULL
+};
+
+class Room
+{
+public:
+	/// 设置房间ID
+	inline void SetID(int id);
+	/// 得到房间ID
+	inline int GetID(void);
+	/// 设置房间类型
+	inline void SetRoomType(RoomType type);
+	/// 得到房间类型
+	inline RoomType GetRoomType(void);
+	/// 设置房间玩家人数
+	inline void SetMaxPlayer(int max);
+	/// 得到房间玩家人数
+	inline int GetMaxPlayer(void);
+	/// 设置房间状态
+	inline void SetRoomState(RoomState state);
+	/// 得到房间状态
+	inline RoomState GetRoomState(void);
+	/// 设置房间名称
+	inline void SetName(std::string name);
+	/// 得到房间名称
+	inline std::string GetName(void);
+	/// 设置游戏抽水值
+	inline void SetChouShui(float cs);
+	/// 得到游戏抽水值
+	inline float GetChouShui(void);
+	/// 设置游戏需要的最少金币
+	inline void SetLastMoney(unsigned int money);
+	/// 得到游戏需要的最少金币
+	inline unsigned int GetLastMoney(void);
+	/// 当前房间是否为空
+	inline bool IsEmpty(void);
+	/// 得到指定索引的玩家
+	Player* GetPlayer(int index);
+	/// 得到当前房间人数
+	int GetPlayerCount(void);
+	/// 得到准备好状态下玩家的人数
+	int GetReadyPlayerCount(void);
+	/// 设置当前房间的房主
+	void SetMaster(int playerId);
+	/// 得到当前房间的房主，房主为当前第一准备开始游戏的玩家
+	inline int GetMaster(void);
+	/// 得到房间中当前的玩家
+	inline int GetCurrentPlayer(void);
+	/// 根据用户连接ID得到用户在房间中的ID
+	int GetPlayerRoomId(int connId);
+	/// 得到当前房间指定状态的玩家个数
+	int GetPlayerCount(PlayerState state);
+	/// 设置当前房间所有玩家的状态
+	void SetAllPlayerState(PlayerState state);
+	/// 设置指定玩家的状态
+	void SetPlayerState(int index,PlayerState state);
+	/// 设置房间中当前玩家
+	inline void SetCurrentPlayer(int playerId);
+	/// 得到当前房间中下一个玩家
+	int GetCurNextPlayer(void);
+	/// 得到当前房间中下一个出牌玩家
+	int GetCurNextWorkPlayer(void);
+
+	/// 清除房间中所有的玩家
+	void ClearAllPlayers(void);
+	/// 添加一个玩家到当前房间中
+	void AddPlayer(Player *pPlayer,int index=-1);
+	/// 添加一个旁观玩家到当前房间中
+	void AddLookOnPlayer(Player *pPlayer,int index);	
+	/// 从当前房间中清除指定的玩家
+	void ClearPlayer(Player *pPlayer);
+	/// 从当前房间中删除指定的玩家
+	void DeletePlayer(Player *pPlayer);	
+	/// 从当前房间中清除指定房间ID的玩家
+	void ClearPlayerById(int Id);
+	/// 检测指定玩家是否存在当前房间
+	bool IsExist(Player *pPlayer);
+	/// 检测指定的旁观玩家是否存在当前房间中
+	bool IsExistLookOn(Player *pPlayer);	
+	/// 检测房间是否已经满员
+	bool IsFull(void);
+	/// 检测房间是否全部准备完毕
+	bool IsReadyed(void);
+	/// 根据玩家连接id得到玩家在当前房间中的索引
+	int GetPlayerIndex(int connId);
+	/// 得到当前房间中掉线玩家人数
+	inline int GetLostPlayerCount(void);	
+	/// 清空当前房间数据
+	void Clear(void);
+	/// 更新指定玩家的数据
+	void UpdateUserScore(int ChairID);	
+	/// 游戏结束时调用
+	void GameEnd(void);	
+	/// 游戏开始是调用
+	void GameStart(void);	
+	
+	/// 向指定的玩家发送数据
+	void SendTableMsg(int index,CMolMessageOut &msg);
+	/// 向指定的玩家发送旁观数据
+	void SendLookOnMes(int index,CMolMessageOut &msg);
+	/// 向所有玩家发送数据
+	void SendAllPlayerMsg(CMolMessageOut &msg);
+
+	/// 打印调试信息
+	void PrintDebugInfo(const char* info);
+	/// 开始一个定时器
+	bool StartTimer(int timerId,int space);
+	/// 关闭一个定时器
+	void StopTimer(int id);
+	/// 关闭所有的定时器
+	void StopAllTimer(void);
+};
