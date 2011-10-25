@@ -1,0 +1,90 @@
+html, body {height:100%; margin: 0; padding: 0; }
+
+html>body {
+	font-size: 16px; 
+	font-size: 68.75%;
+} /* Reset Base Font Size */
+
+body {
+	font-family: Verdana, helvetica, arial, sans-serif;
+	font-size: 68.75%;
+	background: #fff;
+	color: #333;
+}
+
+h1 {
+	font-family : Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 140%;
+	color : #4087B4;
+	border-bottom : 1px solid #4087B4;
+	font-weight : bold;
+	line-height : 20px;
+	margin: 20px 0px 15px 0px;
+}
+
+h2 {
+	font-family : Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 120%;
+	color : #4087B4;
+	font-weight : bold;
+	line-height : 20px;
+	margin: 0px 20px 0px 20px;
+}
+
+h3 {
+	font-family : Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 100%;
+	color : #FFFFFF;
+	font-weight : bold;
+	line-height : 16px;
+	margin: 0px 0px 0px 0px;
+}
+
+h4 {
+	font-family : Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 90%;
+	color : #FFFFFF;
+	font-weight : normal;
+	margin: 0px 0px 0px 17px;
+}
+
+pre {
+	background : #E0E0E0;
+	font-size : 110%;
+	padding : 10px 10px 10px 10px;
+	margin : 0px 20px 15px 20px;
+}
+
+dl {
+	margin-top : 5px;
+	padding-top : 0px;
+	margin-bottom : 15px;
+}
+
+dt {
+	margin-top : 0px;
+	padding-top : 0px;
+	margin-left : 20px;
+	margin-right : 20px;
+	font-weight : bold;
+}
+
+dd {
+	padding-left : 0px;
+	margin-left : 35px;
+	margin-right : 20px;
+}
+
+p {
+	text-align : justify;
+	padding : 0px 20px 0px 20px;
+	margin : 5px 0px 15px 0px;
+}
+
+#banner { padding: 15px; background-color: #06b; color: white; font-size: large; border-bottom: 1px solid #ccc;
+    background: url(bg.gif) repeat-x; text-align: center }
+#banner a { color: white; }
+
+#main { padding: 1em; }
+
+a img { border: none; }
