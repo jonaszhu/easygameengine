@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MoleGameConfig>
+	<Propertys>
+		<Property Name="StartX" Value="38" />
+		<Property Name="StartY" Value="52" />
+		<Property Name="Width" Value="940" />
+		<Property Name="Height" Value="552" />
+		<Property Name="Visible" Value="1" />
+		<Property Name="Enable" Value="1" />
+		<Property Name="background" Value="gameroomconfig\tabel.png" />
+		<Property Name="ChairImage" Value="gameroomconfig\chair.png" />
+		<Property Name="AvatarImage" Value="gameroomconfig\logo.png" />
+		<Property Name="EnterBtnImg" Value="gameroomconfig\enter.png" />
+		<Property Name="EnterBtnOffsets" Value="-70;-10" />
+		<Property Name="RoomRowList" Value="4;3" />
+		<Property Name="RoomChairSize" Value="46;46" />
+	</Propertys>
+	<RoomOffsets playerCount="1">
+		<Property Name="ChairOffsets" Value="-15,35" />
+		<Property Name="ChairNameOffsets" Value="-30,64" />	
+	</RoomOffsets>	
+	<RoomOffsets playerCount="2">
+		<Property Name="ChairOffsets" Value="-96,-44;46,-44" />
+		<Property Name="ChairNameOffsets" Value="-100,14;42,14" />	
+		<Property Name="roomOffset" Value="-21;46" />		
+	</RoomOffsets>
+	<RoomOffsets playerCount="3">
+		<Property Name="ChairOffsets" Value="-96,-44;46,-44;-21,25" />
+		<Property Name="ChairNameOffsets" Value="-100,14;42,14;-21,75" />	
+		<Property Name="roomOffset" Value="-21;92" />		
+	</RoomOffsets>	
+</MoleGameConfig>		

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MoleControl Type="Container" Name="咕噜五子棋 - 1.0.0END">
+    <Propertys>
+        <Property Name="Id" Value="0" />
+        <Property Name="StartX" Value="0" />
+        <Property Name="StartY" Value="0" />
+        <Property Name="Width" Value="1024" />
+        <Property Name="Height" Value="673" />
+        <Property Name="TipText" Value="END" />
+        <Property Name="Visible" Value="1" />
+        <Property Name="Enable" Value="1" />
+        <Property Name="background" Value="" />
+        <Property Name="Moving" Value="1" />
+        <Property Name="IsModal" Value="0" />
+        <Property Name="IsWindow" Value="1" />
+    </Propertys>
+    <Childrens>
+        <MoleControl Type="Button" Name="悔棋按钮END">
+            <Propertys>
+                <Property Name="Id" Value="100" />
+                <Property Name="StartX" Value="623" />
+                <Property Name="StartY" Value="427" />
+                <Property Name="Width" Value="80" />
+                <Property Name="Height" Value="37" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="0" />
+                <Property Name="background" Value="游戏图片\huiqi.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="和棋按钮END">
+            <Propertys>
+                <Property Name="Id" Value="101" />
+                <Property Name="StartX" Value="623" />
+                <Property Name="StartY" Value="465" />
+                <Property Name="Width" Value="80" />
+                <Property Name="Height" Value="37" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="0" />
+                <Property Name="background" Value="游戏图片\huoqi.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="开始按钮END">
+            <Propertys>
+                <Property Name="Id" Value="102" />
+                <Property Name="StartX" Value="623" />
+                <Property Name="StartY" Value="502" />
+                <Property Name="Width" Value="80" />
+                <Property Name="Height" Value="37" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="游戏图片\kaishi.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="认输按钮END">
+            <Propertys>
+                <Property Name="Id" Value="103" />
+                <Property Name="StartX" Value="623" />
+                <Property Name="StartY" Value="537" />
+                <Property Name="Width" Value="80" />
+                <Property Name="Height" Value="37" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="0" />
+                <Property Name="background" Value="游戏图片\renshu.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="保存按钮END">
+            <Propertys>
+                <Property Name="Id" Value="104" />
+                <Property Name="StartX" Value="623" />
+                <Property Name="StartY" Value="575" />
+                <Property Name="Width" Value="80" />
+                <Property Name="Height" Value="37" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="0" />
+                <Property Name="background" Value="游戏图片\baochen.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="读入按钮END">
+            <Propertys>
+                <Property Name="Id" Value="105" />
+                <Property Name="StartX" Value="623" />
+                <Property Name="StartY" Value="612" />
+                <Property Name="Width" Value="80" />
+                <Property Name="Height" Value="37" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="0" />
+                <Property Name="background" Value="游戏图片\duqu.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="StaticText" Name="窗口标题END">
+            <Propertys>
+                <Property Name="Id" Value="106" />
+                <Property Name="StartX" Value="216" />
+                <Property Name="StartY" Value="34" />
+                <Property Name="Width" Value="153" />
+                <Property Name="Height" Value="26" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="" />
+                <Property Name="Size" Value="15" />
+                <Property Name="Ishyperlink" Value="0" />
+                <Property Name="address" Value="" />
+                <Property Name="Snap" Value="1" />
+                <Property Name="Font" Value="" />
+                <Property Name="Text" Value="咕噜五子棋 - 1.0.0END" />
+                <Property Name="Color" Value="255;255;255;255" />
+                <Property Name="SelColor" Value="255;255;255;255" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="EditorBox" Name="聊天输入框END">
+            <Propertys>
+                <Property Name="Id" Value="111" />
+                <Property Name="StartX" Value="756" />
+                <Property Name="StartY" Value="634" />
+                <Property Name="Width" Value="250" />
+                <Property Name="Height" Value="23" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="" />
+                <Property Name="Text" Value="请在这里输入聊天信息..END" />
+                <Property Name="Color" Value="255;0;0;0" />
+                <Property Name="MaxCount" Value="100" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Textarea" Name="聊天信息框END">
+            <Propertys>
+                <Property Name="Id" Value="112" />
+                <Property Name="StartX" Value="748" />
+                <Property Name="StartY" Value="381" />
+                <Property Name="Width" Value="253" />
+                <Property Name="Height" Value="242" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="" />
+                <Property Name="IsUseScrollbar" Value="0" />
+                <Property Name="BgColor" Value="70;0;0;255" />
+                <Property Name="UpButtonImg" Value="游戏图片\fasong.png" />
+                <Property Name="DownButtonImg" Value="游戏图片\fasong1.png" />
+                <Property Name="ScrollBarImg" Value="游戏图片\huakuai.png" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Textarea" Name="系统信息框END">
+            <Propertys>
+                <Property Name="Id" Value="113" />
+                <Property Name="StartX" Value="532" />
+                <Property Name="StartY" Value="325" />
+                <Property Name="Width" Value="255" />
+                <Property Name="Height" Value="77" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="" />
+                <Property Name="IsUseScrollbar" Value="0" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="聊天信息发送END">
+            <Propertys>
+                <Property Name="Id" Value="114" />
+                <Property Name="StartX" Value="765" />
+                <Property Name="StartY" Value="560" />
+                <Property Name="Width" Value="23" />
+                <Property Name="Height" Value="21" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="0" />
+                <Property Name="Enable" Value="0" />
+                <Property Name="background" Value="游戏图片\fasong.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="关闭按钮END">
+            <Propertys>
+                <Property Name="Id" Value="10005" />
+                <Property Name="StartX" Value="991" />
+                <Property Name="StartY" Value="11" />
+                <Property Name="Width" Value="25" />
+                <Property Name="Height" Value="22" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="游戏图片\gb.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="最小化按钮END">
+            <Propertys>
+                <Property Name="Id" Value="10006" />
+                <Property Name="StartX" Value="965" />
+                <Property Name="StartY" Value="11" />
+                <Property Name="Width" Value="25" />
+                <Property Name="Height" Value="22" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="游戏图片\zxh.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+    </Childrens>
+</MoleControl>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MoleControl Type="Container" Name="退出提示对话框END">
+    <Propertys>
+        <Property Name="Id" Value="10001" />
+        <Property Name="StartX" Value="0" />
+        <Property Name="StartY" Value="0" />
+        <Property Name="Width" Value="278" />
+        <Property Name="Height" Value="128" />
+        <Property Name="TipText" Value="END" />
+        <Property Name="Visible" Value="1" />
+        <Property Name="Enable" Value="1" />
+        <Property Name="background" Value="游戏图片\tipdialog.png" />
+        <Property Name="Moving" Value="1" />
+        <Property Name="IsModal" Value="1" />
+        <Property Name="IsWindow" Value="1" />
+    </Propertys>
+    <Childrens>
+        <MoleControl Type="Button" Name="确定按钮END">
+            <Propertys>
+                <Property Name="Id" Value="10004" />
+                <Property Name="StartX" Value="40" />
+                <Property Name="StartY" Value="89" />
+                <Property Name="Width" Value="77" />
+                <Property Name="Height" Value="26" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="游戏图片\ok_bt.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="取消按钮END">
+            <Propertys>
+                <Property Name="Id" Value="10005" />
+                <Property Name="StartX" Value="148" />
+                <Property Name="StartY" Value="89" />
+                <Property Name="Width" Value="79" />
+                <Property Name="Height" Value="26" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="游戏图片\cancel_bt.png" />
+                <Property Name="Text" Value="" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="StaticText" Name="提示标签END">
+            <Propertys>
+                <Property Name="Id" Value="202" />
+                <Property Name="StartX" Value="36" />
+                <Property Name="StartY" Value="7" />
+                <Property Name="Width" Value="122" />
+                <Property Name="Height" Value="26" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="0" />
+                <Property Name="background" Value="" />
+                <Property Name="Size" Value="14" />
+                <Property Name="Snap" Value="0" />
+                <Property Name="Font" Value="" />
+                <Property Name="Text" Value="退出提示END" />
+                <Property Name="Color" Value="255;0;0;0" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="StaticText" Name="标签控件3END">
+            <Propertys>
+                <Property Name="Id" Value="203" />
+                <Property Name="StartX" Value="22" />
+                <Property Name="StartY" Value="43" />
+                <Property Name="Width" Value="218" />
+                <Property Name="Height" Value="26" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="0" />
+                <Property Name="background" Value="" />
+                <Property Name="Size" Value="14" />
+                <Property Name="Snap" Value="1" />
+                <Property Name="Font" Value="" />
+                <Property Name="Text" Value="当前您正在游戏中，您确定退出吗？END" />
+                <Property Name="Color" Value="255;0;0;0" />
+            </Propertys>
+        </MoleControl>
+    </Childrens>
+</MoleControl>

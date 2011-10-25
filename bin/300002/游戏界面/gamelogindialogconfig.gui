@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MoleControl Type="Container" Name="确定对话框END">
+    <Propertys>
+        <Property Name="Id" Value="0" />
+        <Property Name="StartX" Value="0" />
+        <Property Name="StartY" Value="0" />
+        <Property Name="Width" Value="281" />
+        <Property Name="Height" Value="162" />
+        <Property Name="TipText" Value="END" />
+        <Property Name="Visible" Value="1" />
+        <Property Name="Enable" Value="1" />
+        <Property Name="background" Value="images\dlgbg.png" />
+        <Property Name="Moving" Value="1" />
+        <Property Name="IsModal" Value="0" />
+        <Property Name="IsWindow" Value="0" />
+    </Propertys>
+    <Childrens>
+        <MoleControl Type="Textarea" Name="确定对话框提示END">
+            <Propertys>
+                <Property Name="Id" Value="200" />
+                <Property Name="StartX" Value="23" />
+                <Property Name="StartY" Value="50" />
+                <Property Name="Width" Value="238" />
+                <Property Name="Height" Value="93" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="" />
+                <Property Name="IsUseScrollbar" Value="0" />
+            </Propertys>
+        </MoleControl>
+        <MoleControl Type="Button" Name="确定按钮END">
+            <Propertys>
+                <Property Name="Id" Value="10005" />
+                <Property Name="StartX" Value="86" />
+                <Property Name="StartY" Value="123" />
+                <Property Name="Width" Value="81" />
+                <Property Name="Height" Value="32" />
+                <Property Name="TipText" Value="END" />
+                <Property Name="Visible" Value="1" />
+                <Property Name="Enable" Value="1" />
+                <Property Name="background" Value="images\btn.png" />
+                <Property Name="Text" Value="确 定END" />
+            </Propertys>
+        </MoleControl>
+    </Childrens>
+</MoleControl>

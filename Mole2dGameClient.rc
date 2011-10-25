@@ -1,0 +1,345 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\Mole2dGameClient.rc2""  // 非 Microsoft Visual C++ 编辑过的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Mole2dGameClient.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "关于 Mole2dGameClient"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Mole2dGameClient Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2011",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_MOLE2DGAMECLIENT_DIALOG DIALOGEX 0, 0, 611, 200
+STYLE DS_SYSMODAL | DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | 
+    WS_POPUP | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "",IDCANCEL,567,7,20,16
+    DEFPUSHBUTTON   "",IDD_RETURN_ROOT,370,60,50,16
+    DEFPUSHBUTTON   "",IDD_BTN_MIN,550,7,15,16
+    DEFPUSHBUTTON   "",IDD_BTN_HOMEPAGE,229,4,30,16
+    DEFPUSHBUTTON   "",IDD_BTN_ZHONGZHI,284,4,30,16
+    DEFPUSHBUTTON   "",IDD_BTN_BANK,341,4,30,16
+    DEFPUSHBUTTON   "",IDD_BTN_KEHU,400,4,30,16
+END
+
+IDD_SER_DIALOG DIALOGEX 0, 0, 369, 214
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | 
+    WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "游戏服务器控制台"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "连接服务器",ID_BTN_CONNECT,7,195,50,14
+    PUSHBUTTON      "断开连接",ID_BTN_CLOSE,65,195,50,14,WS_DISABLED
+    EDITTEXT        IDC_EDIT_LOG,7,7,355,183,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+    PUSHBUTTON      "参数设置",ID_BTN_SET,126,195,50,14
+    PUSHBUTTON      "更新脚本",ID_BTN_UPDATE,189,195,50,14,WS_DISABLED
+    PUSHBUTTON      "执行脚本",ID_BTN_RESTART,250,195,50,14,WS_DISABLED
+    PUSHBUTTON      "清空记录",ID_BTN_CLEAR,311,195,50,14,WS_DISABLED
+END
+
+IDD_DLG_SER_SET DIALOGEX 0, 0, 186, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "服务器参数设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,29,63,50,14
+    PUSHBUTTON      "取消",IDCANCEL,103,63,50,14
+    LTEXT           "服务器IP:",IDC_STATIC,7,12,43,11
+    LTEXT           "端　口:",IDC_STATIC,8,28,43,11
+    LTEXT           "进入密码:",IDC_STATIC,7,45,43,11
+    EDITTEXT        IDC_EDIT1,44,9,135,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,44,26,135,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,44,43,135,14,ES_AUTOHSCROLL
+END
+
+IDD_DLG_LOGIN DIALOGEX 0, 0, 362, 165
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "",ID_SERVER_LOGIN,116,113,50,14
+    PUSHBUTTON      "",IDCANCEL,340,7,14,14
+    EDITTEXT        IDC_EDIT_NAME,79,41,99,14,ES_AUTOHSCROLL | NOT WS_BORDER,
+                    WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDIT_PW,79,66,99,14,ES_PASSWORD | ES_AUTOHSCROLL | 
+                    NOT WS_BORDER,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,
+                    85,9,10
+    LTEXT           "记住我的账号",IDC_STATIC,221,133,80,10,NOT WS_VISIBLE
+    DEFPUSHBUTTON   "",ID_BTN_REGISTER,30,113,50,14
+    DEFPUSHBUTTON   "",ID_BTN_FORGETPASS,125,86,50,14
+END
+
+IDD_DLG_STATE DIALOGEX 0, 0, 502, 44
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_STATIC,94,27,339,10
+END
+
+IDD_DLG_SWITCHUSER DIALOGEX 0, 0, 248, 119
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "",IDOK,102,98,50,14
+    PUSHBUTTON      "",IDCANCEL,189,98,50,14
+    DEFPUSHBUTTON   "",IDOK2,15,98,50,14
+    LTEXT           "你确定要推出游戏吗？",IDC_STATIC,7,24,234,19,NOT 
+                    WS_VISIBLE
+END
+
+IDD_DLG_MESBOX DIALOGEX 0, 0, 313, 103
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "",IDOK,68,79,50,14
+    PUSHBUTTON      "",IDCANCEL,159,78,50,14
+    PUSHBUTTON      "",IDCANCEL2,279,6,18,14
+END
+
+IDD_DLG_DOWNLOAD DIALOGEX 0, 0, 313, 151
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "",IDOK,284,7,22,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_PRO_TOTAL,"msctls_progress32",WS_BORDER,7,104,247,
+                    14
+    CONTROL         "",IDC_PRO_CUR,"msctls_progress32",WS_BORDER,7,121,247,
+                    14
+    LTEXT           "",IDC_STATIC,6,31,275,10,NOT WS_VISIBLE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "Mole2d独立游戏工作室"
+            VALUE "FileDescription", "mole2d休闲游戏平台"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "Mole2dGameClient.exe"
+            VALUE "LegalCopyright", "Mole2d独立游戏工作室 (C)保留所有权利。"
+            VALUE "OriginalFilename", "Mole2dGameClient.exe"
+            VALUE "ProductName", "mole2d休闲游戏平台"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_MOLE2DGAMECLIENT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 605
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_SER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 362
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_DLG_SER_SET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 77
+    END
+
+    IDD_DLG_LOGIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 355
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_DLG_STATE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 500
+        BOTTOMMARGIN, 35
+    END
+
+    IDD_DLG_SWITCHUSER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_DLG_MESBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_DLG_DOWNLOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 Mole2dGameClient(&A)..."
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\Mole2dGameClient.rc2"  // 非 Microsoft Visual C++ 编辑过的资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

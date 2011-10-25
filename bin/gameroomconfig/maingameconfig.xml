@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gameroomconfig row="3" list="3" rowspace="20" listspace="17" disX="5" disY="5">
+	<Propertys>
+		<Property name="showbtn" value="gameroomconfig\\ks.png" />
+		<Property name="enterbtn" value="gameroomconfig\\jr.png" />
+		<Property name="rulebtn" value="gameroomconfig\\yxgz.png" />
+		<Property name="managerimage" value="gameroomconfig\\bgimg.jpg" />
+		<Property name="gameimage" value="gameroomconfig\\yxk.png" />
+		<Property name="roomimage" value="gameroomconfig\\yxk.png" />
+	</Propertys>	
+	<gameconfigs>
+		<gameconfig gameId="300001" gamelogo="gameroomconfig\\wzq.png" gamerule="http://www.google.com" />
+		<gameconfig gameId="300002" gamelogo="gameroomconfig\\wzq.png" gamerule="http://www.google.com" />
+		<gameconfig gameId="300003" gamelogo="gameroomconfig\\wzq.png" gamerule="http://www.google.com" />
+		<gameconfig gameId="300004" gamelogo="gameroomconfig\\wzq.png" gamerule="http://www.google.com" />
+		<gameconfig gameId="300005" gamelogo="gameroomconfig\\wzq.png" gamerule="http://www.google.com" />
+		<gameconfig gameId="300006" gamelogo="gameroomconfig\\wzq.png" gamerule="http://www.google.com" />
+		<gameconfig gameId="300007" gamelogo="gameroomconfig\\wzq.png" gamerule="http://www.google.com" />
+	</gameconfigs>
+</gameroomconfig>
